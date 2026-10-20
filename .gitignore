@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+bot_backup.py
+*.db
+data/users.json
+data/quiz_results.json
