@@ -731,18 +731,20 @@ def handle_message(
 
     if text == "📚 مسیر یادگیری":
 
+        lesson_overview = "\n".join(
+            f"{lesson_id}. {lesson['title']}"
+            for lesson_id, lesson in LESSONS.items()
+        )
+
         send_message(
             chat_id,
-            """
+            f"""
 📚 LEARNING PATH
 ━━━━━━━━━━━━━━━━━━
 
-چهار مرحله برای شروع AI Safety:
+{len(LESSONS)} درس برای شروع AI Safety:
 
-1️⃣ LLM چیست؟
-2️⃣ Alignment چیست؟
-3️⃣ Refusal Behavior
-4️⃣ Prompt Injection
+{lesson_overview}
 
 👇 یک درس را انتخاب کن:
 """,
